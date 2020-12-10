@@ -50,10 +50,10 @@ app.use('/api', orderRouter);
 
 
 
-//route
-app.get('/', (req, res) => {
-    res.send("Hello from Node..")
-});
+// //route
+// app.get('/', (req, res) => {
+//     res.send("Hello from Node..")
+// });
 
 
 
