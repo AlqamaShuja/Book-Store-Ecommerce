@@ -1,0 +1,20 @@
+npm i express dotenv nodemon
+npm i mongoose
+npm i uuid   // for generating unique string
+npm i body-parser morgan //morgan is used for developement site it shows the route which is requested
+npm i express-validator   //validating input
+npm i express-jwt jsonwebtoken   //used for sign in
+npm i formidable // for uploading image use this lib
+npm i lodash
+npm i cors 
+npm i moment // for showing date
+
+//for payment
+npm i braintree
+
+
+//braintree web drop in react //for use in react
+
+
+
+https://www.youtube.com/watch?v=i9oX1upSKjI //React Map
