@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const expressValidator = require("express-validator");
 const path = require('path');
-require('dotenv').config();
+
 
 
 //import routes
@@ -16,7 +16,7 @@ const categoryRouter = require('./Routes/category');
 const productRouter = require('./Routes/product');
 const braintreeRouter = require('./Routes/braintree');
 const orderRouter = require('./Routes/order');
-
+require('dotenv').config();
 
 
 //DataBase
