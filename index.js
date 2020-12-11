@@ -29,7 +29,7 @@ const orderRouter = require('./Routes/order');
 //DataBase
 mongoose.connect(process.env.Mongo_URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true }, (error) => {
   if(error){
-    return console.log("Unable to connect with Database");
+    return console.log("Unable to connect with Database", error);
   }
   console.log("DB Connection Established");
 });

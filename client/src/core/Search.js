@@ -17,7 +17,7 @@ const Search = () => {
 
     const loadCategories = () => {
         getCategories().then(resData => {
-            if(resData.error !== undefined){
+            if(resData.error){
                 console.log(resData.error);
             }
             else{
