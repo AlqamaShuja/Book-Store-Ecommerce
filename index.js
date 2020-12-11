@@ -8,13 +8,13 @@ const cors = require('cors');
 const expressValidator = require("express-validator");
 const path = require('path');
 
-const expressJWT = require('express-jwt'); 
+// const expressJWT = require('express-jwt'); 
 
 //app
 const app = express();
 
 //
-app.use('/api', expressJWT( {secret: process.env.JWT_SECRET} ));
+// app.use('/api', expressJWT( {secret: process.env.JWT_SECRET} ));
 
 //import routes
 const authRouter = require('./Routes/auth');
@@ -65,7 +65,7 @@ app.use('/api', orderRouter);
 const port = process.env.PORT || 8000;
 
 
-if(process.env.NODE_ENV === 'production'){
+if(process.env.NODE_ENV == 'production'){
   //set static folder
   app.use(express.static('client/build'));
 
