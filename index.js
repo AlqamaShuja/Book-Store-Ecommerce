@@ -9,6 +9,11 @@ const expressValidator = require("express-validator");
 const path = require('path');
 
 const expressJWT = require('express-jwt'); 
+
+//app
+const app = express();
+
+//
 app.use('/api', expressJWT( {secret: process.env.JWT_SECRET} ));
 
 //import routes
@@ -30,9 +35,6 @@ mongoose.connect(process.env.Mongo_URI, { useNewUrlParser: true, useUnifiedTopol
 });
 
 
-
-//app
-const app = express();
 
 
 //middleware
