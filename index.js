@@ -8,13 +8,13 @@ const cors = require('cors');
 const expressValidator = require("express-validator");
 const path = require('path');
 
-const expressJWT = require('express-jwt'); 
+// const expressJWT = require('express-jwt'); 
 
 //app
 const app = express();
 
 //
-app.use('/api', expressJWT( {secret: process.env.JWT_SECRET} ));
+// app.use('/api', expressJWT( {secret: process.env.JWT_SECRET} ));
 
 //import routes
 const authRouter = require('./Routes/auth');
