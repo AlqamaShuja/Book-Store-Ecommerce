@@ -8,7 +8,7 @@ export const getProducts = (sortBy) => {
         method: "GET"
     })
     .then(res => (res.json()))
-    .catch(err => console.log(err));
+    .catch(err => (err.json()));
 }
 
 
@@ -17,7 +17,7 @@ export const getCategories = () => {
         method: "GET"
     })
     .then(data => (data.json()))
-    .catch(err => console.log(err));
+    .catch(err => (err.json()));
 }
 
 
@@ -31,8 +31,8 @@ export const getFilteredProducts = (skip, limit, filters = {}) => {
         },
         body: JSON.stringify(data)
     })
-    .then(res => res.json())
-    .catch(err => err.json());
+    .then(res => (res.json()))
+    .catch(err => (err.json()));
 }
 
 export const list = (params) => {
@@ -45,7 +45,7 @@ export const list = (params) => {
     })
     .catch(err => {
         console.log(err)
-        // return res.json({ error: err });
+        return err.json({ error: err });
     });
 }
 
@@ -59,7 +59,7 @@ export const read = (productId) => {
     })
     .catch(err => {
         console.log(err)
-        // return res.json({ error: err });
+        return err.json({ error: err });
     });
 }
 
@@ -69,7 +69,7 @@ export const listRelated = (productId) => {
         method: "GET"
     })
     .then(data => (data.json()))
-    .catch(err => console.log(err));
+    .catch(err => err.json());
 }
 
 
