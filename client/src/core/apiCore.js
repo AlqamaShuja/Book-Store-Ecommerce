@@ -8,7 +8,7 @@ export const getProducts = (sortBy) => {
         method: "GET"
     })
     .then(res => (res.json()))
-    .catch(err => (err.json()));
+    .catch(err => console.log("Error: Something went wrong in getProducts (apiCore.js)"));
 }
 
 
@@ -17,7 +17,7 @@ export const getCategories = () => {
         method: "GET"
     })
     .then(data => (data.json()))
-    .catch(err => (err.json()));
+    .catch(err => console.log("Error: Something went wrong in getCategories (apiCore.js)"));
 }
 
 
@@ -32,7 +32,7 @@ export const getFilteredProducts = (skip, limit, filters = {}) => {
         body: JSON.stringify(data)
     })
     .then(res => (res.json()))
-    .catch(err => (err.json()));
+    .catch(err => console.log("Error: Something went wrong in getFilteredProducts (apiCore.js)"));
 }
 
 export const list = (params) => {
@@ -44,8 +44,7 @@ export const list = (params) => {
         return res.json() 
     })
     .catch(err => {
-        console.log(err)
-        return err.json({ error: err });
+        console.log("Error: Something went wrong in list (apiCore.js)")
     });
 }
 
@@ -58,8 +57,7 @@ export const read = (productId) => {
         return res.json() 
     })
     .catch(err => {
-        console.log(err)
-        return err.json({ error: err });
+        console.log("Error: Something went wrong in read (apiCore.js)")
     });
 }
 
@@ -69,7 +67,7 @@ export const listRelated = (productId) => {
         method: "GET"
     })
     .then(data => (data.json()))
-    .catch(err => err.json());
+    .catch(err => console.log("Error: Something went wrong in listRelated (apiCore.js)"));
 }
 
 
@@ -83,7 +81,7 @@ export const getBraintreeClientToken = (userId, token) => {
         }
     })
     .then(data => (data.json()))
-    .catch(err => console.log(err));
+    .catch(err => console.log("Error: Something went wrong in getBraintreeClientToken (apiCore.js)"));
 }
 
 
@@ -98,7 +96,7 @@ export const processPayment = (userId, token, paymentData) => {
         body: JSON.stringify(paymentData)
     })
     .then(data => (data.json()))
-    .catch(err => console.log(err));
+    .catch(err => console.log("Error: Something went wrong in getBraintreeClientToken (apiCore.js)", err));
 }
 
 
@@ -116,5 +114,5 @@ export const createOrder = (userId, token, createOrderData) => {
     .then(data => {
         return data.json()
     })
-    .catch(err => console.log(err));
+    .catch(err => console.log("Error: Something went wrong in createOrder (apiCore.js)", err));
 }
