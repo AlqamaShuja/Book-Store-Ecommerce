@@ -63,8 +63,7 @@ app.use('/api', orderRouter);
 
 
 
-
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 5000;
 
 
 if(process.env.NODE_ENV == 'production'){
