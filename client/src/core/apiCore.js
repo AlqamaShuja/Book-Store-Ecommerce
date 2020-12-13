@@ -2,7 +2,7 @@ import queryString from 'query-string';
 const { API } = require("../config");
 
 
-
+//removed ${API} for deployment
 export const getProducts = (sortBy) => {
     return fetch(`/products?sortBy=${sortBy}&order=desc&limit=6`, {
         method: "GET"
