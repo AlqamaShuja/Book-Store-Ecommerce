@@ -6,6 +6,7 @@ const { errorHandler } = require("../helpers/dbErrorHandler");
 
 exports.signup = (req, res) => {
     const user = new User(req.body);
+    user.email.toLowerCase();
     
     user.save().then(() => {
         user.salt = undefined
@@ -19,6 +20,7 @@ exports.signup = (req, res) => {
 
 exports.signin = (req, res) => {
     const { email, password } = req.body;
+    email = email.toLowerCase();
     User.findOne({ email })
         .then(user => {
             if(!user){
